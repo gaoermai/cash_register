@@ -9,6 +9,14 @@ class Money
     }
 
     public function yuan() {
-        return number_format($this->cents/100, 2);
+        return number_format($this->cents / 100, 2);
+    }
+
+    public function cents() {
+        return $this->cents;
+    }
+
+    public function plus($money) {
+        return new Money($this->cents + $money->cents);
     }
 }
